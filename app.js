@@ -33,6 +33,10 @@ setInterval(function(){
  searchForm.addEventListener('submit', ($event) => {
    $event.preventDefault();
 
+   if(placeInput.value === "lagos"){
+     placeInput.value = "lagos nigeria";
+   }
+
    var request_url = api_url
      + '?'
      + 'key=' + apikey
