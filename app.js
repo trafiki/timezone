@@ -33,7 +33,7 @@ setInterval(function(){
  searchForm.addEventListener('submit', ($event) => {
    $event.preventDefault();
 console.log(placeInput.value);
-   if(placeInput.value === "lagos"){
+   if(placeInput.value.toLowerCase() === "lagos"){
      placeInput.value = "lagos, nigeria";
      console.log("if statement reached");
    }
