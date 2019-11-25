@@ -10,7 +10,7 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
  const result = document.getElementById('result');
 
  var getLocation = () => {
-   fetch('http://ip-api.com/json')
+   fetch('https://ipinfo.io/json')
      .then(res => res.json())
      .then(res => {
        currentLocation.textContent = res.city + ', ' + res.country;
