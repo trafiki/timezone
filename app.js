@@ -9,33 +9,33 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
  const currentTime = document.getElementById('currentTime');
  const result = document.getElementById('result');
 
-setInterval(function(){
-  var getLocation = () => {
-    fetch('http://ip-api.com/json')
-      .then(res => res.json())
-      .then(res => {
-        currentLocation.textContent = res.city + ', ' + res.country;
+ var getLocation = () => {
+   fetch('http://ip-api.com/json')
+     .then(res => res.json())
+     .then(res => {
+       currentLocation.textContent = res.city + ', ' + res.country;
 
-        fetch('https://api.ipgeolocation.io/timezone?apiKey=c8eff193453a414daf64eca681ff993e&ip=' + res.query)
-          .then(res => res.json())
-          .then(res => {
-            currentTime.textContent = res.time_24.slice(0, 5);
-          })
-          .catch(err => console.log(err))
-      })
-      .catch(err => console.log(err))
-  }
+       fetch('https://api.ipgeolocation.io/timezone?apiKey=c8eff193453a414daf64eca681ff993e&ip=' + res.query)
+         .then(res => res.json())
+         .then(res => {
+           currentTime.textContent = res.time_24.slice(0, 5);
+         })
+         .catch(err => console.log(err))
+     })
+     .catch(err => console.log(err))
+ }
+ getLocation();
+
+setInterval(function(){
   getLocation();
-}, 1000);
+}, 60000);
 
 
 
  searchForm.addEventListener('submit', ($event) => {
    $event.preventDefault();
-console.log(placeInput.value);
    if(placeInput.value.toLowerCase() === "lagos"){
      placeInput.value = "lagos, nigeria";
-     console.log("if statement reached");
    }
 
    var request_url = api_url
