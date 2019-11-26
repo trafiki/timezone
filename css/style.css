@@ -9,7 +9,9 @@ body,html{
 div,nav{
     box-sizing: border-box;
 }
-
+.hero{
+    height: 100vh;
+}
 /* THE SIDE BACKGROUND */
 .side-bg{
     background: #2F80ED;
@@ -17,14 +19,16 @@ div,nav{
     font-size: 24px;
     font-weight: bold;
     color: #ffffff;
+    height: 100vh;
 }
 
-/*   */
-.hero{
+/*  LANDING PAGE MAIN SECTION  */
+.banner{
     background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(../images/banner.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
 }
 .navbar{
     padding:30px 15px 30px 70px;
@@ -32,7 +36,22 @@ div,nav{
 nav ul li a{
     color: rgba(255,255,255,0.6);
     font-size: 18px;
+    padding: 8px 18px 8px 18px !important;
 }
 li.active a{
     color: #fff;
+}
+
+/* CURRENT TIME AND LOCATION */
+.geolocation-area{
+    position: absolute !important;
+    top: 50%;
+    left: 7%;
+}
+.geolocation-area h2, .geolocation-area p{
+    color: #fff;
+}
+.geolocation-area h2{
+    font-size: 72px;
+    font-weight: bold;
 }

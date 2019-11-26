@@ -10,11 +10,11 @@
 
 <body>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row hero">
       <div class="col-sm-3 side-bg" id="side-bg">
         <center>Astrotech</center>
       </div>
-      <div class="col-sm-9 hero">
+      <div class="col-sm-9 banner">
         <nav class="navbar navbar-expand-sm">
           <ul class="navbar-nav">
             <li class="nav-item active">
@@ -30,11 +30,16 @@
         </nav>
       </div>
     </div>
+    <div class="container geolocation-area">
+      <p>Based on your location</p>
+      <h2 id="currentLocation"></h2>
+      <h2 id="currentTime"></h2>
+    </div>
   </div>
 
 
 
-
+  
   <!-- Area for testing -->
   <!-- <div class="container" id="page-container">
     <header class="text-center">
@@ -58,10 +63,6 @@
     </main>
   </div> -->
   <script src="./src/app.js"></script>
-  <script>
-    const sideBg = document.getElementById('side-bg')
-    sideBg.style.height = window.innerHeight + 'px';
-  </script>
 </body>
 
 </html>
