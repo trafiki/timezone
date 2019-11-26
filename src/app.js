@@ -14,13 +14,7 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
      .then(res => res.json())
      .then(res => {
        currentLocation.textContent = res.city + ', ' + res.country;
-
-       // fetch('https://api.ipgeolocation.io/timezone?apiKey=c8eff193453a414daf64eca681ff993e&ip=' + res.query)
-       //   .then(res => res.json())
-       //   .then(res => {
-       //     currentTime.textContent = res.time_24.slice(0, 5);
-       //   })
-       //   .catch(err => console.log(err))
+      //  console.log(res)
      })
      .catch(err => console.log(err))
  }
@@ -28,7 +22,7 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
 
 const getCurrentTime = () => {
   const today = new Date();
-  currentTime.textContent  = today.getHours() + ":" +  (today.getMinutes()<10?'0':'') + today.getMinutes() + ":" +today.getSeconds();
+  currentTime.textContent  = (today.getHours() < 10 ? '0' : '') + today.getHours() + ":" +  (today.getMinutes()<10?'0':'') + today.getMinutes() + ":" +today.getSeconds();
 }
 getCurrentTime();
 
