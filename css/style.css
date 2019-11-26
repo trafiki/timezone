@@ -45,7 +45,7 @@ li.active a{
 /* CURRENT TIME AND LOCATION */
 .geolocation-area{
     position: absolute !important;
-    top: 50%;
+    top: 45%;
     left: 7%;
 }
 .geolocation-area h2, .geolocation-area p{
@@ -54,4 +54,8 @@ li.active a{
 .geolocation-area h2{
     font-size: 72px;
     font-weight: bold;
+}
+.geolocation-area h2, .geolocation-area p{
+    margin: 0px;
+    padding-left: 0px;
 }
