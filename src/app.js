@@ -22,7 +22,7 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
 
 const getCurrentTime = () => {
   const today = new Date();
-  currentTime.textContent  = (today.getHours() < 10 ? '0' : '') + today.getHours() + " : " +  (today.getMinutes()<10?'0':'') + today.getMinutes();
+  currentTime.textContent  = (today.getHours() < 10 ? '0' : '') + today.getHours() + ":" +  (today.getMinutes()<10?'0':'') + today.getMinutes();
 }
 getCurrentTime();
 
