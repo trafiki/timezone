@@ -55,20 +55,23 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
 
  };
 
- getTime("london", londonTime, true);
- getTime("sydney", sydneyTime, true);
- getTime("greece", greeceTime, true);
- getTime("delhi", delhiTime, true);
- getTime("tokyo", tokyoTime, true);
-
 const getCurrentTime = () => {
   const today = new Date();
   currentTime.textContent  = (today.getHours() < 10 ? '0' : '') + today.getHours() + ":" +  (today.getMinutes()<10?'0':'') + today.getMinutes();
 }
-getCurrentTime();
+
+const getAllTime = () => {
+  getCurrentTime();
+  getTime("london", londonTime, true);
+  getTime("sydney", sydneyTime, true);
+  getTime("greece", greeceTime, true);
+  getTime("delhi", delhiTime, true);
+  getTime("tokyo", tokyoTime, true);
+};
+getAllTime();
 
 setInterval(function(){
-  getCurrentTime();
+  getAllTime();
 }, 60000);
 
 
