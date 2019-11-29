@@ -9,6 +9,13 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
  const currentTime = document.getElementById('currentTime');
  const result = document.getElementById('result');
 
+ // Access Popular Places
+ const londonTime = document.querySelector('.london h2');
+ const sydneyTime = document.querySelector('.sydney h2');
+ const greeceTime = document.querySelector('.greece h2');
+ const delhiTime = document.querySelector('.delhi h2');
+ const tokyoTime = document.querySelector('.tokyo h2');
+
  var getLocation = () => {
    fetch('https://ipinfo.io/json')
      .then(res => res.json())
@@ -20,6 +27,40 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
  }
  getLocation();
 
+ var getTime =  (place, targetElement, timeOnly) => {
+   var request_url = api_url
+     + '?'
+     + 'key=' + apikey
+     + '&q=' + place
+     + '&pretty=1';
+     // + '&no_annotations=1';
+
+     console.log(result.textContent);
+
+   fetch(request_url)
+     .then(res => res.json())
+     .then(response => {
+       // console.log(response.results[0].annotations.timezone.name);
+       var text = response.results[0].annotations.timezone.name;
+       fetch('https://api.ipgeolocation.io/timezone?apiKey=c8eff193453a414daf64eca681ff993e&tz=' + text)
+         .then(res => res.json())
+         .then(res => {
+           if(timeOnly) targetElement.textContent = res.time_24.slice(0, 5);
+           else targetElement.textContent = "Time in " + place + " is " + res.time_24.slice(0, 5) + " (" + res.date + ")";
+         })
+         .catch(err => console.log(err));
+     }
+   )
+   .catch(err => console.log(err))
+
+ };
+
+ getTime("london", londonTime, true);
+ getTime("sydney", sydneyTime, true);
+ getTime("greece", greeceTime, true);
+ getTime("delhi", delhiTime, true);
+ getTime("tokyo", tokyoTime, true);
+
 const getCurrentTime = () => {
   const today = new Date();
   currentTime.textContent  = (today.getHours() < 10 ? '0' : '') + today.getHours() + ":" +  (today.getMinutes()<10?'0':'') + today.getMinutes();
@@ -28,7 +69,7 @@ getCurrentTime();
 
 setInterval(function(){
   getCurrentTime();
-}, 1000);
+}, 60000);
 
 
 
@@ -38,30 +79,7 @@ setInterval(function(){
      placeInput.value = "lagos, nigeria";
    }
 
-   var request_url = api_url
-     + '?'
-     + 'key=' + apikey
-     + '&q=' + placeInput.value
-     + '&pretty=1';
-     // + '&no_annotations=1';
-
-     var getTime =  () => {
-       fetch(request_url)
-         .then(res => res.json())
-         .then(response => {
-           // console.log(response.results[0].annotations.timezone.name);
-           var text = response.results[0].annotations.timezone.name;
-           fetch('https://api.ipgeolocation.io/timezone?apiKey=c8eff193453a414daf64eca681ff993e&tz=' + text)
-             .then(res => res.json())
-             .then(res => result.textContent = "Time in " + placeInput.value + " is " + res.time_24.slice(0, 5) + " | " + res.date )
-             .catch(err => console.log(err))
-         }
-       )
-       .catch(err => console.log(err))
-
-     };
-
-     getTime();
+   getTime(placeInput.value, result, false);
 
 
  });
