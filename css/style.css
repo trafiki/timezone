@@ -12,6 +12,18 @@ div,nav{
 .hero{
     height: 100vh;
 }
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    background-color: rgba(0,0,0,0.3);
+    box-sizing: border-box;
+  }
 /* THE SIDE BACKGROUND */
 .side-bg{
     background: #2F80ED;
@@ -58,4 +70,115 @@ li.active a{
 .geolocation-area h2, .geolocation-area p{
     margin: 0px;
     padding-left: 0px;
+}
+.geolocation-area p{
+    opacity: 0.6;
+}
+
+/* SEARCH FORM AREA */
+.search-form{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 90%;
+    border-right: 0px;
+}
+input{
+    width: 85%;
+    margin: 0px !important;
+    padding: 10px;
+    border: 2px solid #2F80ED;
+    margin-right: 2px;    
+}
+button{
+    width: 14.5%;
+    padding: 10px;
+    margin: 0px !important;
+    border: 0px;
+    color: #fff;
+    background: #2F80ED;
+    border: 2px solid #2F80ED;
+    margin-left: 0px;
+    padding-right: 0px;
+}
+
+/* POPULAR LOCATION AREA */
+.popular-locations{
+    padding-bottom: 60px;
+}
+.london{
+    position: relative;
+    padding:0;
+    height:420px;
+}
+.london img{
+    width: 100%;
+    height: 420px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.sydney{
+    position: relative;
+    padding: 0px;
+}
+.sydney img{
+    width: 100%;
+    height: 240px;
+}
+.greece{
+    position: relative;
+    padding: 0px;
+}
+.greece img{
+    width: 100%;
+    height: 240px;
+}
+.delhi{
+    position: relative;
+    padding: 0px;
+}
+.delhi img{
+    width: 100%;
+    height:165px;
+}
+.tokyo{
+    position: relative;
+    padding: 0px;
+}
+.tokyo img{
+    width: 100%;
+    height: 165px;
+}
+.sydney , .greece{
+    margin-left: 15px;
+}
+.delhi,.tokyo{
+    margin: 15px 0px 0px 15px;
+}
+.details h4, .details h2{
+    color: #fff;
+    margin-bottom: 0px;
+}
+.details h4{
+    font-size: 18px;
+    font-weight:normal
+}
+.details h2{
+    font-size: 38px;
+    font-weight: bold;
+}
+.london .details{
+    position: absolute;
+    top: 85%;
+    left: 5%;
+}
+.greece .details, .sydney .details{
+    position: absolute;
+    top: 73%;
+    left: 5%;
+}
+.delhi .details, .tokyo .details{
+    position: absolute;
+    top: 60%;
+    left: 5%;
 }
