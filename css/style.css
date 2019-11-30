@@ -5,10 +5,15 @@ body, html {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 }
 
 div, nav {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .hero {
@@ -73,6 +78,7 @@ nav ul li a {
   color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
   padding: 8px 18px 8px 18px !important;
+  font-weight: 600;
 }
 
 li.active a {
@@ -265,7 +271,45 @@ form#search-form button {
   color: #fff;
 }
 
+div#collapsibleNavbar {
+  position: absolute;
+  right: 0;
+}
+
+.fa-navicon:before, .fa-reorder:before, .fa-bars:before {
+  color: #f3f0f0;
+}
+
 /* MEDIA QUERY */
+@media only screen and (max-width: 736px) {
+  div#mobile-menu {
+    width: 40%;
+    text-align: right;
+    padding-right: 30px;
+  }
+
+  .popular-locations .col-sm-12 {
+    height: 200px !important;
+  }
+
+  .popular-locations col-sm-12 {
+    height: 200px !important;
+  }
+
+  .popular-locations img {
+    height: 200px;
+  }
+
+  .col-sm-12 .details {
+    top: 40% !important;
+  }
+
+  .popular-locations .col-md-7, .popular-locations .col-md-4 {
+    margin: 0;
+    margin-bottom: 25px;
+  }
+}
+
 @media only screen and (max-width: 480px) {
   .banner {
     display: none;
@@ -309,17 +353,6 @@ form#search-form button {
     width: 40%;
   }
 
-  div#mobile-menu {
-    width: 40%;
-    text-align: right;
-    padding-right: 30px;
-  }
-
-  div#collapsibleNavbar {
-    position: absolute;
-    right: 0;
-  }
-
   li.nav-item {
     width: 200px;
   }
@@ -337,6 +370,6 @@ form#search-form button {
   }
 
   .nudge i {
-    font-size: 2em;
+    display: none;
   }
 }
