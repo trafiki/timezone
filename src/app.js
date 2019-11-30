@@ -35,7 +35,7 @@ var apikey = 'f3d1f1dba2454d5e815ff2e5230e3e33';
      + '&pretty=1';
      // + '&no_annotations=1';
 
-     console.log(result.textContent);
+     // console.log(result.textContent);
 
    fetch(request_url)
      .then(res => res.json())
