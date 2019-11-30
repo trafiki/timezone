@@ -271,11 +271,6 @@ form#search-form button {
   color: #fff;
 }
 
-div#collapsibleNavbar {
-  position: absolute;
-  right: 0;
-}
-
 .fa-navicon:before, .fa-reorder:before, .fa-bars:before {
   color: #f3f0f0;
 }
@@ -286,6 +281,11 @@ div#collapsibleNavbar {
     width: 40%;
     text-align: right;
     padding-right: 30px;
+  }
+
+  div#collapsibleNavbar {
+    position: absolute;
+    right: 0;
   }
 
   .popular-locations .col-sm-12 {
