@@ -1,5 +1,5 @@
-@import url('http://fonts.googleapis.com/css?family=Poppins');
-@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body, html {
   margin: 0;
@@ -105,9 +105,9 @@ li.active a {
 
 /* SEARCH FORM AREA */
 .search-form {
-  margin-top: 50px;
+  margin-top: 60px;
   margin-bottom: 50px;
-  width: 90%;
+  width: 98%;
   border-right: 0px;
 }
 
@@ -213,27 +213,74 @@ button {
   font-weight: bold;
 }
 
-.london .details {
+/* .london .details {
   position: absolute;
-  top: 85%;
+
   left: 5%;
 }
 
 .greece .details, .sydney .details {
-  position: absolute;
-  top: 73%;
+
   left: 5%;
 }
 
 .delhi .details, .tokyo .details {
   position: absolute;
-  top: 60%;
+  left: 5%;
+
+} */
+.details {
+  position: absolute;
+  bottom: 8%;
   left: 5%;
 }
 
+form#search-form input {
+  width: 78%;
+  border: 2px solid #eee;
+  height: 80px;
+  font-size: 22px;
+}
+
+form#search-form button {
+  width: 21%;
+  padding: 10px;
+  height: 80px;
+}
+
 /* MEDIA QUERY */
-/* @media only screen and (max-width: 846px) {
+@media only screen and (max-width: 480px) {
   .banner {
     display: none;
   }
-} */
+
+  .hero {
+    height: 50vh;
+  }
+
+  .geolocation-area {
+    position: absolute !important;
+    top: 25%;
+  }
+
+  .popular-locations .col-sm-12 {
+    height: 150px !important;
+  }
+
+  .popular-locations col-sm-12 {
+    height: 150px !important;
+  }
+
+  .popular-locations img {
+    height: 150px;
+  }
+
+  .col-sm-12 .details {
+    top: 40% !important;
+  }
+
+  .popular-locations .col-md-7, .popular-locations .col-md-4 {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
