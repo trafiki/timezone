@@ -13,6 +13,7 @@ div, nav {
 
 .hero {
   height: 100vh;
+  position: relative;
 }
 
 .overlay {
@@ -248,6 +249,22 @@ form#search-form button {
   height: 80px;
 }
 
+.nudge {
+  width: 100%;
+  position: absolute;
+  bottom: 8%;
+  text-align: center;
+}
+
+.nudge i {
+  font-size: 3em;
+}
+
+.fa-arrow-circle-down:before {
+  content: "\f0ab";
+  color: #fff;
+}
+
 /* MEDIA QUERY */
 @media only screen and (max-width: 480px) {
   .banner {
@@ -260,7 +277,7 @@ form#search-form button {
 
   .geolocation-area {
     position: absolute !important;
-    top: 25%;
+    top: 20%;
   }
 
   .popular-locations .col-sm-12 {
@@ -282,5 +299,44 @@ form#search-form button {
   .popular-locations .col-md-7, .popular-locations .col-md-4 {
     margin: 0;
     margin-bottom: 20px;
+  }
+
+  .navbar {
+    padding: 10px 15px 30px 10px;
+  }
+
+  div#logo {
+    width: 40%;
+  }
+
+  div#mobile-menu {
+    width: 40%;
+    text-align: right;
+    padding-right: 30px;
+  }
+
+  div#collapsibleNavbar {
+    position: absolute;
+    right: 0;
+  }
+
+  li.nav-item {
+    width: 200px;
+  }
+
+  nav ul li a {
+    padding: 4px 18px !important;
+  }
+
+  form#search-form input {
+    font-size: 18px;
+  }
+
+  .geolocation-area h2 {
+    font-size: 48px;
+  }
+
+  .nudge i {
+    font-size: 2em;
   }
 }
